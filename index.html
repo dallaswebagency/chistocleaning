@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chisto – Professional Cleaning Services in Edmonton</title>
+<meta name="description" content="Chisto provides professional cleaning services in Edmonton for homes and businesses. Eco-friendly care, deep cleaning and reliable staff for spotless results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1D4E; --navy-2:#1A2A66; --peri:#BECAF5; --mist:#EEF1FC; --sky:#A9C4E4; --slate:#56618A;
+  --bg:#FFFFFF; --surface:#EEF1FC; --ink:#0F1D4E; --muted:#56618A; --line:rgba(15,29,78,.14);
+  --btn:#0F1D4E; --btn-ink:#FFFFFF; --field:#FFFFFF;
+  --display:"Bricolage Grotesque", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --wrap:1240px;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1336; --surface:#111D47; --ink:#EEF1FC; --muted:#A9B3DA; --line:rgba(238,241,252,.14);
+    --btn:#BECAF5; --btn-ink:#0F1D4E; --field:#16245A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1336; --surface:#111D47; --ink:#EEF1FC; --muted:#A9B3DA; --line:rgba(238,241,252,.14);
+  --btn:#BECAF5; --btn-ink:#0F1D4E; --field:#16245A; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--peri);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--display);font-stretch:78%;font-variation-settings:"wdth" 78;line-height:1;letter-spacing:-.01em;margin:0;font-weight:700}
+h2{font-size:clamp(2.2rem,4.6vw,3.9rem)}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:999px;background:var(--btn);color:var(--btn-ink);font:600 1rem/1 var(--body);text-decoration:none;border:2px solid var(--btn);cursor:pointer;transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn--peri{background:var(--peri);border-color:var(--peri);color:#0F1D4E}
+
+/* logo (rebuilt from the mark printed on Chisto uniforms) */
+.logo{display:inline-flex;text-decoration:none;color:inherit}
+.logo svg{height:52px;width:auto;overflow:visible}
+.logo text{font-family:Jost,"Futura","Century Gothic",Arial,sans-serif}
+
+/* top info bar */
+.topbar{background:#0F1D4E;color:#DCE3FA;font-size:.86rem}
+.topbar .wrap{display:flex;gap:28px;align-items:center;justify-content:space-between;min-height:42px;flex-wrap:wrap}
+.topbar a{text-decoration:none}
+.topbar a:hover{color:#fff}
+.topbar .group{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.topbar .ico{display:inline-flex;gap:8px;align-items:center}
+.topbar svg{width:15px;height:15px;flex:none}
+
+/* header */
+header.site{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+header.site .wrap{display:flex;align-items:center;gap:32px;height:76px}
+nav.main{display:flex;gap:30px;margin-left:auto}
+nav.main a{text-decoration:none;font-weight:500;font-size:.98rem;padding:6px 0;border-bottom:2px solid transparent}
+nav.main a:hover{border-color:var(--peri)}
+.head-cta{display:flex;align-items:center;gap:20px}
+.head-cta .tel{font-weight:600;text-decoration:none;white-space:nowrap}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{padding:56px 0 20px;position:relative}
+.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:stretch}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:10px 0 90px}
+.rating{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;text-decoration:none;padding:8px 16px 8px 10px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;margin-bottom:30px}
+.rating b{font-family:var(--display);font-size:1.15rem;background:var(--peri);color:#0F1D4E;border-radius:999px;padding:3px 10px;line-height:1.2}
+.stars{color:#F5B400;letter-spacing:2px}
+.hero h1{font-size:clamp(2.9rem,6.4vw,5.6rem);font-weight:800;line-height:.92}
+.hero h1 .km{display:block;font-weight:400;font-size:.46em;line-height:1.1;margin-top:18px;color:var(--muted);font-stretch:90%;font-variation-settings:"wdth" 90}
+.hero .lede{font-size:1.15rem;max-width:30em;margin:26px 0 34px;color:var(--muted)}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+.hero-media{position:relative;min-height:600px;border-radius:28px 28px 28px 160px;overflow:hidden;background:var(--peri)}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:6% 50%}
+/* the squeegee reveal */
+.film{position:absolute;inset:0;z-index:2;background:
+  radial-gradient(circle at 20% 30%,rgba(255,255,255,.55) 0 3px,transparent 4px),
+  radial-gradient(circle at 65% 70%,rgba(255,255,255,.5) 0 5px,transparent 6px),
+  radial-gradient(circle at 40% 85%,rgba(255,255,255,.45) 0 2px,transparent 3px),
+  radial-gradient(circle at 80% 18%,rgba(255,255,255,.5) 0 4px,transparent 5px),
+  linear-gradient(160deg,#C9D3F8,#AEBCF0 55%,#C3CCF6);
+  background-size:90px 90px,140px 140px,70px 70px,120px 120px,100% 100%;
+  animation:wipe 1.5s cubic-bezier(.6,.05,.25,1) .5s forwards}
+.squeegee{position:absolute;z-index:3;top:-4%;bottom:-4%;left:0;width:22px;transform:translateX(-30px);background:#0F1D4E;border-radius:6px;box-shadow:6px 0 0 #A9C4E4;animation:sweep 1.5s cubic-bezier(.6,.05,.25,1) .5s forwards}
+.squeegee::after{content:"";position:absolute;top:50%;left:-70px;width:70px;height:16px;margin-top:-8px;background:#0F1D4E;border-radius:8px 0 0 8px}
+@keyframes wipe{to{clip-path:inset(0 0 0 100%)}}
+@keyframes sweep{to{transform:translateX(calc(100cqw + 120px))}}
+.hero-media{container-type:inline-size}
+.film{clip-path:inset(0 0 0 0)}
+
+.estimate{position:relative;z-index:5;margin:-64px 40px 0;display:grid;grid-template-columns:auto 1.3fr 1fr 1fr auto;gap:16px;align-items:end;background:var(--bg);border-radius:24px;padding:22px 22px 22px 30px;box-shadow:0 28px 60px -26px rgba(15,29,78,.5);border:1px solid var(--line)}
+.estimate h3{font-size:1.55rem;max-width:7em;align-self:center;line-height:1.02}
+.estimate .field{margin:0}
+.estimate .btn{height:47px}
+.estimate .form-note{grid-column:1/-1;margin:0}
+.estimate .form-note:empty{display:none}
+.field{display:block;margin-bottom:12px}
+.field span{display:block;font-size:.8rem;color:var(--muted);margin-bottom:4px;font-weight:500}
+.field input,.field select{width:100%;font:inherit;font-size:.98rem;color:var(--ink);background:var(--field);border:1px solid var(--line);border-radius:12px;padding:11px 14px;height:47px}
+.field input:focus,.field select:focus{outline:2px solid var(--peri);border-color:transparent}
+.contact-form .field{margin:0}
+.form-note{font-size:.82rem;color:var(--muted);margin-top:10px;min-height:1.2em}
+
+/* services price board */
+.services{padding:110px 0 90px}
+.sec-head{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;margin-bottom:54px}
+.sec-head h2{max-width:14em}
+.sec-head p{max-width:22em;color:var(--muted)}
+.board{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+.stage{position:sticky;top:110px;border-radius:24px;overflow:hidden;aspect-ratio:4/4.6;background:var(--surface)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
+.stage img.on{opacity:1}
+.stage .tag{position:absolute;left:20px;bottom:20px;z-index:2;background:#0F1D4E;color:#fff;border-radius:16px;padding:14px 18px;line-height:1.1}
+.stage .tag small{display:block;font-size:.8rem;color:#BECAF5;margin-bottom:4px}
+.stage .tag strong{font-family:var(--display);font-size:2.2rem;font-weight:800}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line)}
+.row-btn{all:unset;box-sizing:border-box;display:grid;grid-template-columns:1fr auto 28px;gap:18px;align-items:baseline;width:100%;padding:24px 4px;cursor:pointer}
+.row-btn:focus-visible{outline:3px solid var(--peri)}
+.row-btn h3{font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;transition:color .2s}
+.row-btn .price{font-size:.95rem;color:var(--muted);white-space:nowrap}
+.row-btn .price b{font-family:var(--display);font-size:1.35rem;color:var(--ink)}
+.row-btn .pm{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);position:relative;align-self:center}
+.row-btn .pm::before,.row-btn .pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:2px;margin:-1px 0 0 -5.5px;background:currentColor;transition:transform .25s}
+.row-btn .pm::after{transform:rotate(90deg)}
+.row.open .pm{background:#0F1D4E;border-color:#0F1D4E;color:#fff}
+.row.open .pm::after{transform:rotate(0)}
+.row:not(.open) .row-btn:hover h3{color:var(--slate)}
+.row-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.row.open .row-body{grid-template-rows:1fr}
+.row-body>div{overflow:hidden}
+.row-body ul{margin:0 0 18px;padding:0;list-style:none;display:grid;gap:8px}
+.row-body li{display:flex;gap:12px;align-items:baseline;color:var(--muted)}
+.row-body li::before{content:"";flex:none;width:9px;height:9px;border:2px solid var(--slate);border-radius:2px;transform:translateY(-1px)}
+.row-body .links{display:flex;gap:12px;flex-wrap:wrap;padding-bottom:26px}
+.row-body .btn{padding:12px 22px;font-size:.95rem}
+.row-thumb{display:none}
+
+.extra{display:grid;grid-template-columns:140px 1fr auto;gap:28px;align-items:center;margin-top:44px;padding:18px 26px 18px 18px;background:var(--surface);border-radius:22px}
+.extra img{width:140px;height:110px;object-fit:cover;border-radius:14px}
+.extra h3{font-size:1.6rem;margin-bottom:4px}
+.extra p{color:var(--muted)}
+
+/* why us */
+.why{background:#0F1D4E;color:#E7ECFD;padding:110px 0;position:relative;overflow:hidden}
+.why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;position:relative}
+.why h2{color:#fff}
+.why .intro{margin-top:26px;color:#BFC8EE;max-width:28em}
+.why-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.why-tel{background:transparent;border-color:rgba(190,202,245,.4);color:#fff}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.point{padding:26px 0;border-top:1px solid rgba(190,202,245,.22)}
+.point h3{font-size:1.55rem;color:#fff;display:flex;gap:12px;align-items:baseline;margin-bottom:10px;font-weight:700}
+.point h3::before{content:"";flex:none;width:16px;height:16px;border:2.5px solid #BECAF5;border-radius:3px;background:linear-gradient(#BECAF5,#BECAF5) center/6px 6px no-repeat}
+.point p{color:#BFC8EE;font-size:.98rem}
+
+/* showreels */
+.reels{padding:110px 0 40px}
+.reel-track{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:50px}
+.reel{position:relative;display:block;aspect-ratio:9/14;border-radius:22px;overflow:hidden;text-decoration:none;color:#fff;background:var(--surface)}
+.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.reel:hover img{transform:scale(1.04)}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,29,78,0) 45%,rgba(15,29,78,.85))}
+.reel .play{position:absolute;top:18px;right:18px;z-index:2;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center}
+.reel .play svg{width:18px;height:18px;margin-left:3px;fill:#0F1D4E}
+.reel .cap{position:absolute;left:20px;right:20px;bottom:20px;z-index:2}
+.reel .cap small{display:inline-block;font-size:.78rem;background:#BECAF5;color:#0F1D4E;padding:3px 10px;border-radius:999px;margin-bottom:10px;font-weight:600}
+.reel .cap span{display:block;font-family:var(--display);font-size:1.45rem;font-weight:700;line-height:1.05;font-stretch:80%;font-variation-settings:"wdth" 80}
+
+/* process */
+.process{padding:100px 0}
+.proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.proc-photo{position:relative;border-radius:160px 24px 24px 24px;overflow:hidden;aspect-ratio:4/4.4}
+.proc-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.proc-photo blockquote{position:absolute;left:20px;right:20px;bottom:20px;margin:0;background:rgba(15,29,78,.9);color:#fff;border-radius:18px;padding:20px 22px;font-size:1.02rem;line-height:1.45}
+.process .sub{color:var(--muted);margin:22px 0 36px;max-width:30em}
+.steps{list-style:none;margin:0 0 36px;padding:0;counter-reset:s}
+.steps li{position:relative;padding:0 0 28px 70px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-4px;width:46px;height:46px;border-radius:14px;background:var(--surface);color:var(--ink);font-family:var(--display);font-weight:800;font-size:1.3rem;display:grid;place-items:center;border:1px solid var(--line)}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:23px;top:48px;bottom:4px;width:2px;background:repeating-linear-gradient(var(--line) 0 6px,transparent 6px 11px)}
+.steps li:last-child::before{background:#0F1D4E;color:#fff;border-color:#0F1D4E}
+.steps h3{font-size:1.5rem;margin-bottom:6px}
+.steps p{color:var(--muted);font-size:.98rem}
+
+/* reviews */
+.reviews{background:var(--surface);padding:110px 0}
+.rev-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
+.score{font-family:var(--display);font-size:clamp(6rem,12vw,10rem);font-weight:800;line-height:.85;letter-spacing:-.03em}
+.score-meta{margin-top:14px;color:var(--muted)}
+.score-meta a{font-weight:600;color:var(--ink)}
+.reviews h2{margin-bottom:28px}
+.quote{position:relative;min-height:300px}
+.quote figure{margin:0;display:none}
+.quote figure.on{display:block;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.quote blockquote{margin:0;font-family:var(--display);font-size:clamp(1.35rem,2.2vw,1.85rem);line-height:1.3;font-weight:500;font-stretch:92%;font-variation-settings:"wdth" 92}
+.quote figcaption{margin-top:24px;display:flex;align-items:center;gap:14px;color:var(--muted);font-size:.95rem}
+.quote figcaption b{color:var(--ink);font-size:1.05rem}
+.g{width:22px;height:22px;flex:none}
+.names{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px;padding-top:26px;border-top:1px solid var(--line)}
+.names button{font:500 .92rem var(--body);color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+.names button[aria-selected="true"]{background:#0F1D4E;color:#fff;border-color:#0F1D4E}
+
+/* faq */
+.faq{padding:110px 0}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.faq-side{position:sticky;top:110px}
+.faq-photo{margin-top:36px;border-radius:24px 24px 24px 110px;aspect-ratio:4/3.3;object-fit:cover;width:100%}
+.faq-side p{color:var(--muted);margin:22px 0 28px;max-width:22em}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 50px 24px 0;position:relative;font-family:var(--display);font-size:1.45rem;font-weight:600;line-height:1.2;font-stretch:88%;font-variation-settings:"wdth" 88}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq .ans{padding:0 50px 26px 0;color:var(--muted)}
+.faq .ans ul{margin:10px 0;padding-left:20px}
+
+/* contact */
+.contact{padding:0 0 110px}
+.contact-box{display:grid;grid-template-columns:1.05fr .95fr;border-radius:32px;overflow:hidden;background:#BECAF5;color:#0F1D4E}
+.contact-copy{padding:70px 64px}
+.contact-copy h2{font-size:clamp(2rem,3.8vw,3.3rem)}
+.contact-copy>p{margin:20px 0 34px;max-width:30em;color:#2B3A72}
+.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.contact-form .full{grid-column:1/-1}
+.contact .field span{color:#2B3A72}
+.contact .field input,.contact .field select{background:#fff;color:#0F1D4E;border-color:rgba(15,29,78,.16)}
+.contact .btn{background:#0F1D4E;border-color:#0F1D4E;color:#fff}
+.contact .form-note{color:#2B3A72}
+.contact-photo{position:relative;min-height:520px}
+.contact-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.offer{position:absolute;left:28px;right:28px;bottom:28px;background:#0F1D4E;color:#fff;border-radius:20px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.offer .pct{font-family:var(--display);font-size:3rem;font-weight:800;color:#BECAF5;line-height:1}
+.offer b{display:block;font-size:1.1rem}
+.offer span{font-size:.92rem;color:#C9D1F3}
+
+/* footer */
+footer.site{background:#0F1D4E;color:#C9D1F3;padding:80px 0 30px;font-size:.96rem}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px}
+footer.site h4{font:600 1rem var(--body);color:#fff;margin:0 0 18px}
+footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+footer.site a{text-decoration:none}
+footer.site a:hover{color:#fff;text-decoration:underline}
+.foot-brand p{margin:20px 0 22px;max-width:20em}
+.social{display:flex;gap:10px}
+.social a{width:42px;height:42px;border-radius:12px;border:1px solid rgba(190,202,245,.3);display:grid;place-items:center}
+.social a:hover{background:#BECAF5;color:#0F1D4E;text-decoration:none}
+.social svg{width:18px;height:18px;fill:currentColor}
+.foot-bottom{margin-top:60px;padding-top:24px;border-top:1px solid rgba(190,202,245,.2);display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between;font-size:.88rem}
+.foot-bottom .legal{display:flex;gap:22px}
+.credit a{color:#fff;font-weight:600}
+
+/* whatsapp chat */
+.chat{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;align-items:center;gap:12px;background:#fff;color:#0F1D4E;border-radius:999px;padding:6px 18px 6px 6px;text-decoration:none;box-shadow:0 14px 40px -12px rgba(15,29,78,.5);font-size:.9rem;line-height:1.2}
+.chat img{width:48px;height:48px;border-radius:50%;background:#E9EDFC}
+.chat b{display:block}
+.chat .wa{width:30px;height:30px;border-radius:50%;background:#25D366;display:grid;place-items:center;margin-left:4px}
+.chat .wa svg{width:16px;height:16px;fill:#fff}
+
+/* responsive */
+@media (max-width:1060px){
+  nav.main{display:none}
+  .menu-btn{display:grid;place-items:center;margin-left:auto}
+  nav.main.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 28px 20px}
+  nav.main.open a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .hero-grid,.board,.why-grid,.proc-grid,.rev-grid,.faq-grid,.contact-box{grid-template-columns:1fr}
+  .hero-copy{padding:0}
+  .estimate{grid-template-columns:1fr 1fr;margin:-50px 20px 0}
+  .estimate h3{grid-column:1/-1;max-width:none}
+  .hero-media{min-height:560px}
+  .stage{display:none}
+  .row-thumb{display:block;border-radius:16px;overflow:hidden;aspect-ratio:16/10;margin-bottom:18px}
+  .row-thumb img{width:100%;height:100%;object-fit:cover}
+  .reel-track{grid-template-columns:repeat(4,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+  .reel{scroll-snap-align:start}
+  .faq-side{position:static}
+  .faq-photo{display:none}
+  .sec-head{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .topbar .hide-sm{display:none}
+  .head-cta .tel{display:none}
+  .head-cta .btn{padding:12px 18px}
+  .logo svg{height:40px}
+  .hero{padding-top:30px}
+  .hero-media{min-height:380px;border-radius:22px 22px 22px 90px}
+  .estimate{grid-template-columns:1fr;margin:-40px 10px 0;padding:22px}
+  .points{grid-template-columns:1fr}
+  .extra{grid-template-columns:1fr;text-align:left}
+  .extra img{width:100%;height:160px}
+  .contact-copy{padding:44px 24px}
+  .contact-form{grid-template-columns:1fr}
+  .contact-photo{min-height:460px}
+  .foot-grid{grid-template-columns:1fr}
+  .chat .txt{display:none}
+  .chat{padding:6px}
+  .chat .wa{display:none}
+  .row-btn{grid-template-columns:1fr 28px}
+  .row-btn .price{grid-column:1;grid-row:2;margin-top:-10px}
+  .row-btn .pm{grid-column:2;grid-row:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .film,.squeegee{animation:none;display:none}
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="group">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Edmonton &amp; surrounding areas, up to 40 km</span>
+      <span class="ico hide-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7 days a week, 9 am to 6 pm, even on holidays</span>
+    </div>
+    <div class="group">
+      <a class="ico hide-sm" href="mailto:chisto.cleaner@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>chisto.cleaner@gmail.com</a>
+      <a class="ico" href="tel:+15873352703"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+1 (587) 335-2703</a>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="https://chistocleaning.ca/" aria-label="Chisto Cleaning Services, Edmonton">
+      <svg viewBox="0 0 168 64" role="img" aria-hidden="true">
+        <path d="M80 2H2v60h72" fill="none" stroke="currentColor" stroke-width="2.6"/>
+        <path d="M80 2v14M80 47v15" fill="none" stroke="currentColor" stroke-width="2.6"/>
+        <text x="11" y="42" font-size="33" font-weight="500" fill="currentColor" letter-spacing=".5">CHISTO</text>
+        <text x="12" y="55" font-size="6.4" font-weight="500" fill="currentColor" letter-spacing="1.25">PROFESSIONAL CLEANING SERVICES</text>
+      </svg>
+    </a>
+    <nav class="main" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="https://chistocleaning.ca/pricing/">Pricing</a>
+      <a href="https://chistocleaning.ca/about-us/">About Us</a>
+      <a href="https://chistocleaning.ca/blog/">Blog</a>
+      <a href="https://chistocleaning.ca/contact-us/">Contact</a>
+    </nav>
+    <div class="head-cta">
+      <a class="tel" href="tel:+15873352703">+1 (587) 335-2703</a>
+      <a class="btn" href="https://chistocleaning.ca/form/">Book now</a>
+    </div>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <a class="rating" href="https://share.google/w3KspcTgQdbNik0qb" target="_blank" rel="noopener">
+        <b>5.0</b><span class="stars" aria-hidden="true">★★★★★</span><span>based on 125 Google reviews</span>
+      </a>
+      <h1>Professional cleaning services in Edmonton<span class="km">&amp; surrounding areas, up to 40 km</span></h1>
+      <p class="lede">A cleaning company with an excellent reputation. Homes, offices, rentals and new builds, cleaned as if they were our own.</p>
+      <div class="ctas">
+        <a class="btn" href="https://chistocleaning.ca/form/">Book a cleaning</a>
+        <a class="btn btn--ghost" href="#services">See services and prices</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="images/hero-team.jpg" alt="Chisto cleaners in light-blue uniforms cleaning an open-plan Edmonton home">
+      <div class="film" aria-hidden="true"></div>
+      <div class="squeegee" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <form class="estimate js-estimate" novalidate>
+      <h3>Get a free estimate now</h3>
+      <label class="field"><span>Service</span>
+        <select name="service" required>
+          <option>Residential cleaning: deep $45/h</option>
+          <option>Residential cleaning: regular $40/h</option>
+          <option>Move in/out $45/h</option>
+          <option>AirBnB $40/h</option>
+          <option>Post renovation $45/h</option>
+          <option>Commercial cleaning min $300</option>
+          <option>Carpet cleaning min $100</option>
+          <option>Post-construction cleaning min $300</option>
+        </select></label>
+      <label class="field"><span>Name</span><input name="name" autocomplete="name" required></label>
+      <label class="field"><span>Phone</span><input name="phone" type="tel" autocomplete="tel" required></label>
+      <button class="btn" type="submit">Send request</button>
+      <p class="form-note" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>We take care of your cleaning needs: fast, spotless, and hassle-free</h2>
+      <p>Pick a service to see what’s included and the starting price.</p>
+    </div>
+    <div class="board">
+      <div class="stage" aria-hidden="true">
+        <img class="on" data-i="0" src="images/service-residential.jpg" alt="">
+        <img data-i="1" src="images/service-move.jpg" alt="">
+        <img data-i="2" src="images/service-commercial.jpg" alt="">
+        <img data-i="3" src="images/service-post-construction.jpg" alt="">
+        <img data-i="4" src="images/service-carpet.jpg" alt="">
+        <img data-i="5" src="images/service-airbnb.jpg" alt="">
+        <div class="tag"><small>from</small><strong class="js-stage-price">$126</strong></div>
+      </div>
+      <ul class="rows">
+        <li class="row open" data-i="0" data-price="$126">
+          <button class="row-btn" aria-expanded="true" aria-controls="s0"><h3>Residential cleaning</h3><span class="price">from <b>$126</b></span><span class="pm" aria-hidden="true"></span></button>
+          <div class="row-body" id="s0"><div>
+            <div class="row-thumb"><img src="images/service-residential.jpg" alt="Clean, bright living room after residential cleaning"></div>
+            <ul><li>Dusting and cleaning of all surfaces</li><li>Kitchen cleaning, including exterior appliance wipe-downs</li><li>Full bathroom cleaning and sanitization</li></ul>
+            <div class="links"><a class="btn" href="https://chistocleaning.ca/form/?service=27">Book now</a><a class="btn btn--ghost" href="https://chistocleaning.ca/services/residential/">Learn more</a></div>
+          </div></div>
+        </li>
+        <li class="row" data-i="1" data-price="$157.50">
+          <button class="row-btn" aria-expanded="false" aria-controls="s1"><h3>Move-in &amp; Move-out</h3><span class="price">from <b>$157.50</b></span><span class="pm" aria-hidden="true"></span></button>
+          <div class="row-body" id="s1"><div>
+            <div class="row-thumb"><img src="images/service-move.jpg" alt="Moving boxes in an empty room ready for move-out cleaning"></div>
+            <ul><li>Deep cleaning of all rooms and surfaces</li><li>Kitchen and bathroom full sanitization</li><li>Inside cabinets, drawers, and closets cleaning</li></ul>
+            <div class="links"><a class="btn" href="https://chistocleaning.ca/form/?service=28">Book now</a><a class="btn btn--ghost" href="https://chistocleaning.ca/services/move-in-move-out/">Learn more</a></div>
+          </div></div>
+        </li>
+        <li class="row" data-i="2" data-price="$300">
+          <button class="row-btn" aria-expanded="false" aria-controls="s2"><h3>Commercial cleaning</h3><span class="price">from <b>$300</b></span><span class="pm" aria-hidden="true"></span></button>
+          <div class="row-body" id="s2"><div>
+            <div class="row-thumb"><img src="images/service-commercial.jpg" alt="Tidy office desks after commercial cleaning"></div>
+            <ul><li>Offices and coworking spaces</li><li>Medical and dental clinics</li><li>Beauty salons, barbershops, and spas</li></ul>
+            <div class="links"><a class="btn" href="https://chistocleaning.ca/form/?service=29">Book now</a><a class="btn btn--ghost" href="https://chistocleaning.ca/services/commercial/">Learn more</a></div>
+          </div></div>
+        </li>
+        <li class="row" data-i="3" data-price="$300">
+          <button class="row-btn" aria-expanded="false" aria-controls="s3"><h3>Post-construction cleaning</h3><span class="price">from <b>$300</b></span><span class="pm" aria-hidden="true"></span></button>
+          <div class="row-body" id="s3"><div>
+            <div class="row-thumb"><img src="images/service-post-construction.jpg" alt="Freshly renovated kitchen after post-construction cleaning"></div>
+            <ul><li>Homes and apartments</li><li>Offices and commercial spaces</li><li>Retail stores and shopping units</li></ul>
+            <div class="links"><a class="btn" href="https://chistocleaning.ca/form/?service=30">Book now</a><a class="btn btn--ghost" href="https://chistocleaning.ca/services/post-construction/">Learn more</a></div>
+          </div></div>
+        </li>
+        <li class="row" data-i="4" data-price="$100">
+          <button class="row-btn" aria-expanded="false" aria-controls="s4"><h3>Carpet cleaning</h3><span class="price">from <b>$100</b></span><span class="pm" aria-hidden="true"></span></button>
+          <div class="row-body" id="s4"><div>
+            <div class="row-thumb"><img src="images/service-carpet.jpg" alt="Hot water extraction wand cleaning a carpet"></div>
+            <ul><li>Deep carpet and rug cleaning</li><li>Stain and odor removal</li><li>Pet hair and allergen treatment</li></ul>
+            <div class="links"><a class="btn" href="https://chistocleaning.ca/form/?service=31">Book now</a><a class="btn btn--ghost" href="https://chistocleaning.ca/services/carpet/">Learn more</a></div>
+          </div></div>
+        </li>
+        <li class="row" data-i="5" data-price="$126">
+          <button class="row-btn" aria-expanded="false" aria-controls="s5"><h3>Airbnb</h3><span class="price">from <b>$126</b></span><span class="pm" aria-hidden="true"></span></button>
+          <div class="row-body" id="s5"><div>
+            <div class="row-thumb"><img src="images/service-airbnb.jpg" alt="Chisto team cleaning a rental kitchen between guests"></div>
+            <ul><li>Full turnover cleaning between guests</li><li>Bedroom, kitchen, and bathroom sanitization</li><li>Fresh linens and towel replacement</li></ul>
+            <div class="links"><a class="btn" href="https://chistocleaning.ca/form/?service=32">Book now</a><a class="btn btn--ghost" href="https://chistocleaning.ca/services/airbnb/">Learn more</a></div>
+          </div></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="extra">
+      <img src="images/extra-services.jpg" alt="Ironing a shirt as an extra service">
+      <div><h3>Extra services</h3><p>Many of our clients love adding extra services for that perfect finishing touch.</p></div>
+      <a class="btn btn--ghost" href="https://chistocleaning.ca/form/">Choose an extra service</a>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap why-grid">
+    <div>
+      <h2>Why clients in Edmonton choose us and recommend us to others</h2>
+      <p class="intro">In just 3 years of work in Edmonton, we’ve completed thousands of cleanings in homes, apartments, and commercial spaces. Every month new customers come to us by recommendation from friends, neighbours, and business partners.</p>
+      <div class="why-cta"><a class="btn btn--peri" href="https://chistocleaning.ca/about-us/">About our team</a><a class="btn why-tel" href="tel:+15873352703">+1 (587) 335-2703</a></div>
+    </div>
+    <div class="points">
+      <div class="point"><h3>Impeccable quality</h3><p>We take pride in our work and perfect every job. Missed something? We’ll come back and fix it, no questions asked.</p></div>
+      <div class="point"><h3>Transparency and guarantees</h3><p>No surprises: you’ll know exactly when the team will arrive, how much the service costs, and what will be done. Our company is insured, and all cleaners are trained and certified.</p></div>
+      <div class="point"><h3>Flexible schedule</h3><p>We work 7 days a week, early mornings, evenings, weekends, and even holidays. Your cleaning won’t depend on someone else’s schedule.</p></div>
+      <div class="point"><h3>Eco-friendly and safe</h3><p>On request, we use green cleaning products suitable for families with children, allergy sufferers, and pet owners.</p></div>
+      <div class="point"><h3>Reliable team</h3><p>Our team includes Ukrainians you can trust for cleanliness and care. Punctual, polite, and you won’t have to explain anything twice.</p></div>
+      <div class="point"><h3>Affordable pricing at the start</h3><p>We’re new to Edmonton, so our rates are currently lower than most cleaning companies. This is temporary, so take advantage now.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reels" id="showreels">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>See how Chisto Cleaning Services get the job done</h2>
+      <p>Short clips straight from our jobs around Edmonton.</p>
+    </div>
+    <div class="reel-track">
+      <a class="reel" href="https://chistocleaning.ca/wp-content/uploads/2025/11/IMG_8640.mov" target="_blank" rel="noopener">
+        <img src="images/reel-post-reno.jpg" alt=""><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        <span class="cap"><small>Post-construction cleaning</small><span>Renovation done, we bring the shine</span></span></a>
+      <a class="reel" href="https://chistocleaning.ca/wp-content/uploads/2025/11/deep_cleaning.mov" target="_blank" rel="noopener">
+        <img src="images/reel-deep-clean.jpg" alt=""><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        <span class="cap"><small>Residential cleaning</small><span>Deep cleaning made easy &amp; fast</span></span></a>
+      <a class="reel" href="https://chistocleaning.ca/wp-content/uploads/2025/11/ester.mov" target="_blank" rel="noopener">
+        <img src="images/reel-restaurant.jpg" alt=""><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        <span class="cap"><small>Commercial cleaning</small><span>The restaurant shines after cleaning</span></span></a>
+      <a class="reel" href="https://chistocleaning.ca/wp-content/uploads/2025/11/IMG_8635.mov" target="_blank" rel="noopener">
+        <img src="images/reel-after-reno.jpg" alt=""><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+        <span class="cap"><small>Post-construction cleaning</small><span>After renovation: time to sparkle!</span></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap proc-grid">
+    <div class="proc-photo">
+      <img src="images/process.jpg" alt="Client booking a Chisto cleaning from her laptop at home">
+      <blockquote>You choose the day, we handle everything and get everything in order. Your only job is to enjoy the results.</blockquote>
+    </div>
+    <div>
+      <h2>How cleaning works, step by step</h2>
+      <p class="sub">Everything clear, straightforward, and stress-free. We value your time, so we made the process as simple as possible.</p>
+      <ol class="steps">
+        <li><h3>You submit a request</h3><p>Fill out a short form, and we take it from there.</p></li>
+        <li><h3>A Chisto manager contacts you</h3><p>They clarify the type of property, number of bedrooms and bathrooms, your needs and preferences, and a convenient time. You get a price upfront, no hidden fees.</p></li>
+        <li><h3>The team arrives on time</h3><p>Our cleaners show up promptly with their own supplies and equipment, and work quickly, carefully, and respectfully in your space.</p></li>
+        <li><h3>Quality check and a nice bonus</h3><p>Is everything perfect? We’re always ready to fix anything that might have been missed.</p></li>
+      </ol>
+      <a class="btn" href="https://chistocleaning.ca/form/">Book a cleaning</a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap rev-grid">
+    <div>
+      <div class="score">5.0</div>
+      <p class="score-meta"><span class="stars" aria-hidden="true">★★★★★</span><br>based on <a href="https://share.google/w3KspcTgQdbNik0qb" target="_blank" rel="noopener">125 Google reviews</a></p>
+    </div>
+    <div>
+      <h2>See what our clients say</h2>
+      <div class="quote" aria-live="polite">
+        <figure class="on"><blockquote>“I had such a hard time finding professional cleaners I could trust, but I’m absolutely blown away by Chisto’s services! They were incredibly responsive, and my house has never looked cleaner. I really appreciated the small details they took care of that went above and beyond my expectations.”</blockquote><figcaption><svg class="g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg><span><b>SM</b>, on Google Review, 19 Oct</span></figcaption></figure>
+        <figure><blockquote>“Efficient, professional and actually they do what they say. 100% recommended. Followed instructions and more. I have tried other companies but not nearly as good as them, they do the CLEANING!”</blockquote><figcaption><svg class="g" viewBox="0 0 48 48"><use href="#gl"/></svg><span><b>Noran Sultan</b>, on Google Review, 19 Sep</span></figcaption></figure>
+        <figure><blockquote>“They did a spectacular job with my move out clean. Above and beyond what was expected! Highly recommend!!!”</blockquote><figcaption><svg class="g" viewBox="0 0 48 48"><use href="#gl"/></svg><span><b>Liane Nernberg</b>, on Google Review, 11 Nov</span></figcaption></figure>
+        <figure><blockquote>“We have had the same two girls and their work has been very very good and very efficient. Jobs well done, we recommend. Thank you.”</blockquote><figcaption><svg class="g" viewBox="0 0 48 48"><use href="#gl"/></svg><span><b>Ross Wady</b>, on Google Review, 24 Sep</span></figcaption></figure>
+        <figure><blockquote>“This is my first time hiring a cleaning company to help me stay on top of the day-to-day house cleaning. I am beyond happy that I found Chisto cleaning! They were prompt in quoting and scheduling, have amazing communication and customer service, and the cleaning team is stellar. 10/10.”</blockquote><figcaption><svg class="g" viewBox="0 0 48 48"><use href="#gl"/></svg><span><b>Leana Glusac</b>, on Google Review, 24 Jul</span></figcaption></figure>
+        <figure><blockquote>“Amazing cleaners! They do the job well and quick. They were referred to me by a friend who did not have a great experience from the other cleaning company. I can for sure say they are great at their job!”</blockquote><figcaption><svg class="g" viewBox="0 0 48 48"><use href="#gl"/></svg><span><b>Jasbelle</b>, on Google Review, 24 Aug</span></figcaption></figure>
+        <figure><blockquote>“Chisto Cleaning Services have been cleaning my home for almost a year and they continue to impress me. Everyone I have interacted with are incredibly professional, friendly, detail-oriented, and respectful of my home.”</blockquote><figcaption><svg class="g" viewBox="0 0 48 48"><use href="#gl"/></svg><span><b>Michelle M</b>, on Google Review, 24 Sep</span></figcaption></figure>
+      </div>
+      <div class="names" role="tablist" aria-label="Reviews">
+        <button role="tab" aria-selected="true">SM</button><button role="tab" aria-selected="false">Noran Sultan</button><button role="tab" aria-selected="false">Liane Nernberg</button><button role="tab" aria-selected="false">Ross Wady</button><button role="tab" aria-selected="false">Leana Glusac</button><button role="tab" aria-selected="false">Jasbelle</button><button role="tab" aria-selected="false">Michelle M</button>
+      </div>
+    </div>
+  </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="gl"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></g></defs></svg>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side">
+      <h2>Got questions? We’ve got answers</h2>
+      <p>Didn’t find yours? Call or message us and a Chisto manager will help.</p>
+      <a class="btn btn--ghost" href="tel:+15873352703">Call +1 (587) 335-2703</a>
+      <img class="faq-photo" src="images/service-airbnb.jpg" alt="Chisto team in uniform cleaning a kitchen">
+    </div>
+    <div>
+      <details open><summary>Do you service my area?</summary><div class="ans">Most likely, yes! We operate throughout Edmonton and nearby neighbourhoods. Please confirm your address when booking.</div></details>
+      <details><summary>How do I book?</summary><div class="ans">Just fill out the form on our website, send us a message, or give us a call. We’ll get in touch to confirm the details.</div></details>
+      <details><summary>How much does cleaning cost?</summary><div class="ans">Our cleaning rates start at $35/hour per cleaner.<ul><li>Weekly and bi-weekly cleaning: $35/hour</li><li>One-time and monthly cleaning: $40/hour</li><li>Deep cleaning: $45/hour</li></ul>The final cost depends on the size of your space and the type of service. Get in touch for a free personalized quote.</div></details>
+      <details><summary>I need it urgently. Is that possible?</summary><div class="ans">Yes, we often offer same-day service, especially for last-minute requests. Contact us, and we’ll find the soonest available slot.</div></details>
+      <details><summary>What are your working hours?</summary><div class="ans">We clean from 9 am to 6 pm, 7 days a week, even on holidays.</div></details>
+      <details><summary>Do you bring your own supplies and equipment?</summary><div class="ans">Yes, we arrive fully equipped. You don’t need to worry about anything.</div></details>
+      <details><summary>Do you arrive on time?</summary><div class="ans">Yes, punctuality is our priority. If we’re ever delayed (which is very rare), we always notify you in advance.</div></details>
+      <details><summary>Do we need to be home during cleaning?</summary><div class="ans">Not necessarily. You can give us access, and we’ll clean and report back with photos or videos.</div></details>
+      <details><summary>How do you guarantee cleaning quality?</summary><div class="ans">We get it right the first time, but if anything’s missed, we’ll come back and fix it free of charge. Your satisfaction matters to us.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div class="contact-copy">
+        <h2>Free up your time for what truly matters, we’ll take care of the cleaning</h2>
+        <p>Home, office, or rental apartment: submit a request, and we’ll make everything sparkling clean.</p>
+        <form class="contact-form js-estimate" novalidate>
+          <label class="field full"><span>Service</span>
+            <select name="service" required>
+              <option>Residential cleaning: deep $45/h</option>
+              <option>Residential cleaning: regular $40/h</option>
+              <option>Move in/out $45/h</option>
+              <option>AirBnB $40/h</option>
+              <option>Post renovation $45/h</option>
+              <option>Commercial cleaning min $300</option>
+              <option>Carpet cleaning min $100</option>
+              <option>Post-construction cleaning min $300</option>
+            </select></label>
+          <label class="field"><span>Name</span><input name="name" autocomplete="name" required></label>
+          <label class="field"><span>Phone</span><input name="phone" type="tel" autocomplete="tel" required></label>
+          <div class="full"><button class="btn" type="submit">Send request</button><p class="form-note" aria-live="polite"></p></div>
+        </form>
+      </div>
+      <div class="contact-photo">
+        <img src="images/contact.jpg" alt="Client messaging Chisto from her phone">
+        <div class="offer"><span class="pct">10%</span><div><b>Referral discount</b><span>Recommend us to friends or colleagues and receive a bonus for each new client.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="https://chistocleaning.ca/" aria-label="Chisto home">
+          <svg viewBox="0 0 168 64" aria-hidden="true" style="height:58px">
+            <path d="M80 2H2v60h72" fill="none" stroke="#fff" stroke-width="2.6"/><path d="M80 2v14M80 47v15" fill="none" stroke="#fff" stroke-width="2.6"/>
+            <text x="11" y="42" font-size="33" font-weight="500" fill="#fff" letter-spacing=".5">CHISTO</text>
+            <text x="12" y="55" font-size="6.4" font-weight="500" fill="#BECAF5" letter-spacing="1.25">PROFESSIONAL CLEANING SERVICES</text>
+          </svg>
+        </a>
+        <p>To clean every home as if it were our own.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/chisto.cleaning.edmonton/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c2.7 0 3 0 4 .1 2.8.1 4 1.4 4.1 4.1.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.8-.1-4-1.4-4.1-4.1-.1-1-.1-1.3-.1-4s0-3 .1-4C4 3.7 5.2 2.4 8 2.3c1-.1 1.3-.1 4-.1z"/></svg></a>
+          <a href="https://www.tiktok.com/@chisto_canada?_r=1&amp;_t=ZM-91VZOTGoeo0" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg></a>
+          <a href="https://www.facebook.com/cleaning.chisto" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2C16.7 2.1 15.7 2 14.6 2 12.2 2 10.6 3.4 10.6 6v2H8v3.2h2.6V22H14v-10.8h2.7L17 8h-3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15873352703">+1 (587) 335-2703</a></li>
+          <li><a href="https://wa.me/15873352703" target="_blank" rel="noopener">WhatsApp chat</a></li>
+          <li><a href="mailto:chisto.cleaner@gmail.com">chisto.cleaner@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps/place/Edmonton,+AB,+Canada,+Alberta" target="_blank" rel="noopener">Edmonton, AB, Canada, Alberta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Cleaning services</h4>
+        <ul>
+          <li><a href="https://chistocleaning.ca/services/residential/">Residential cleaning</a></li>
+          <li><a href="https://chistocleaning.ca/services/move-in-move-out/">Move-in &amp; Move-out</a></li>
+          <li><a href="https://chistocleaning.ca/services/commercial/">Commercial cleaning</a></li>
+          <li><a href="https://chistocleaning.ca/services/post-construction/">Post-construction cleaning</a></li>
+          <li><a href="https://chistocleaning.ca/services/carpet/">Carpet cleaning</a></li>
+          <li><a href="https://chistocleaning.ca/services/airbnb/">Airbnb</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For customers</h4>
+        <ul>
+          <li><a href="https://chistocleaning.ca/pricing/">Pricing</a></li>
+          <li><a href="https://chistocleaning.ca/about-us/">About Us</a></li>
+          <li><a href="https://chistocleaning.ca/blog/">Blog</a></li>
+          <li><a href="https://chistocleaning.ca/contact-us/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>©2026 Chisto Cleaning Services. All rights reserved.</span>
+      <span class="legal"><a href="https://chistocleaning.ca/privacy-policy/">Privacy Policy</a><a href="https://chistocleaning.ca/terms/">Terms</a></span>
+      <span class="credit">Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="chat" href="https://wa.me/15873352703" target="_blank" rel="noopener" aria-label="Start a WhatsApp chat with Chisto">
+  <img src="images/avatar.png" alt="">
+  <span class="txt"><b>Short on time?</b>Start a WhatsApp chat now</span>
+  <span class="wa" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg></span>
+</a>
+
+<script>
+(function(){
+  // mobile menu
+  var mb=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+
+  // services price board
+  var rows=[].slice.call(document.querySelectorAll('.row')),
+      imgs=[].slice.call(document.querySelectorAll('.stage img')),
+      price=document.querySelector('.js-stage-price');
+  rows.forEach(function(r){
+    r.querySelector('.row-btn').addEventListener('click',function(){
+      var wasOpen=r.classList.contains('open');
+      rows.forEach(function(x){x.classList.remove('open');x.querySelector('.row-btn').setAttribute('aria-expanded','false')});
+      if(!wasOpen||window.matchMedia('(min-width:1061px)').matches){
+        r.classList.add('open');r.querySelector('.row-btn').setAttribute('aria-expanded','true');
+      }
+      var i=r.dataset.i;
+      imgs.forEach(function(im){im.classList.toggle('on',im.dataset.i===i)});
+      price.textContent=r.dataset.price;
+    });
+  });
+
+  // reviews
+  var tabs=[].slice.call(document.querySelectorAll('.names button')),
+      figs=[].slice.call(document.querySelectorAll('.quote figure'));
+  var gl=document.querySelector('#gl');
+  figs.forEach(function(f,i){ if(i>0){var s=f.querySelector('svg.g');s.innerHTML=gl.innerHTML;} });
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x,j){x.setAttribute('aria-selected',j===i)});
+      figs.forEach(function(f,j){f.classList.toggle('on',j===i)});
+    });
+  });
+
+  // estimate forms: open an email to Chisto with the request
+  [].forEach.call(document.querySelectorAll('.js-estimate'),function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var note=f.querySelector('.form-note'),n=f.name.value.trim(),p=f.phone.value.trim();
+      if(!n||!p){note.textContent='Add your name and phone so we can call you back.';(n?f.phone:f.name).focus();return;}
+      var body='Service: '+f.service.value+'\nName: '+n+'\nPhone: '+p;
+      window.location.href='mailto:chisto.cleaner@gmail.com?subject='+encodeURIComponent('Free estimate request')+'&body='+encodeURIComponent(body);
+      note.textContent='Opening your email app with the request. You can also call +1 (587) 335-2703.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
